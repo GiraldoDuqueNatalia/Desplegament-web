@@ -4,7 +4,7 @@ require_once('Connexio.php');
 require_once('Header.php');
 
 class Principal {
-    
+    // Este es un comentario para probar conexion netbeans github desktop
     // Método para mostrar la lista de productos
     public function mostrarProductes() {
         // Obtiene la conexión a la base de datos
