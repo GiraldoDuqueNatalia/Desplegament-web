@@ -49,6 +49,10 @@ Para obtener una copia local en funcionamiento, sigue estos sencillos pasos de e
 5 Modifica el archivo Connexio.php con tus credenciales de MySQL.
 6. Accede a tu aplicación en http://localhost/Desplegament-web.
    o si netbeans te da otra salida puede ser: http://localhost:8000/Principal.php
+
+### Usos 
+Desde la pantalla principal.php puedes dar click en boton Nou y agregar producto y dar click en el boton Eliminar y eliminará el producto seleccionado
+![Captura de pantalla de Principal.php](https://github.com/GiraldoDuqueNatalia/Desplegament-web/blob/4d7f31488efdf638d06800e4efa118e3fd0853b9/Principal.png)
                            
 ### Contribuyendo
 Las contribuciones son lo que hacen a la comunidad de código abierto un lugar tan increíble para aprender, inspirar y crear. Cualquier contribución que hagas será muy apreciada.
