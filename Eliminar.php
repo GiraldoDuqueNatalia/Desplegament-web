@@ -1,13 +1,22 @@
 <?php
 require_once('Connexio.php');
 
-// Verifica si se recibió un ID válido del producto a eliminar
+/**
+ * Script para eliminar un producto de la base de datos.
+ */
+
+// Verifica si se recibió un ID  válido del producto a eliminar
 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id']) && is_numeric($_GET['id'])) {
-    // Obtiene el ID del producto a eliminar
+    /**
+     * @var int $idProducto El ID del producto a eliminar
+     */
     $idProducto = $_GET['id'];
 
     // Conecta a la base de datos
     $conn = new Connexio();
+    /**
+     * @var mysqli $conexion La conexión a la base de datos
+     */
     $conexion = $conn->obtenirConnexio();
 
     // Prepara la consulta SQL de eliminación
