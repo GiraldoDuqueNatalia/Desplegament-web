@@ -2,7 +2,7 @@
 require_once('Connexio.php');
 
 /**
- * Script para agregar un nuevo producto a la base de datos.
+ * Script para  agregar un nuevo producto a la base de datos.
  */
 
 // Verifica si se recibieron datos del formulario
