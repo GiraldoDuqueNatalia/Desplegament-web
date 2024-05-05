@@ -2,10 +2,10 @@
 require_once('Connexio.php');
 
 /**
- * Script para  agregar un nuevo producto a la base de datos.
+ * Script para agregar un nuevo producto a la base de datos.
  */
 
-// Verifica si se recibieron datos  del formulario
+// Verifica si se recibieron datos del formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     /**
      * @var string $nom El nombre del producto
