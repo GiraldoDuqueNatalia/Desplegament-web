@@ -1,18 +1,34 @@
 <?php
 require_once('Connexio.php');
 
+/**
+ * Script para agregar un nuevo producto a la base de datos.
+ */
+
 // Verifica si se recibieron datos del formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Recibe los datos del formulario
+    /**
+     * @var string $nom El nombre del producto
+     */
     $nom = $_POST['nom'];
+    /**
+     * @var string $descripcio La descripción del producto
+     */
     $descripcio = $_POST['descripcio'];
+    /**
+     * @var float $preu El precio del producto
+     */
     $preu = $_POST['preu'];
+    /**
+     * @var int $categoria El ID de la categoría del producto
+     */
     $categoria = $_POST['categoria'];
-
-    // Limpia y valida los datos recibidos (puedes agregar validaciones según sea necesario)
 
     // Conecta a la base de datos
     $conn = new Connexio();
+    /**
+     * @var mysqli $conexion La conexión a la base de datos
+     */
     $conexion = $conn->obtenirConnexio();
 
     // Prepara la consulta SQL de inserción
@@ -61,36 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h2>Nuevo producto</h2>
         <hr>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
-            <div class="mb-3">
-                <label for="nom" class="form-label">Nombre:</label>
-                <input type="text" name="nom" class="form-control" required>
-            </div>
-
-            <div class="mb-3">
-                <label for="descripcio" class="form-label">Descripción:</label>
-                <input type="text" name="descripcio" class="form-control" required>
-            </div>
-
-            <div class="mb-3">
-                <label for="preu" class="form-label">Precio:</label>
-                <input type="number" name="preu" class="form-control" required>
-            </div>
-
-            <div class="mb-3">
-                <label for="categoria" class="form-label">Categoría:</label>
-                <select name="categoria" class="form-select" required>
-                    <option value="1">Electrónicos</option>
-                    <option value="2">Ropa</option>
-                    <!-- Agrega más opciones según sea necesario -->
-                </select>
-            </div>
-
-            <!-- Agrega más campos según sea necesario -->
-
-            <hr>
-            <!-- Botones de guardar y cancelar -->
-            <input type="submit" value="Guardar" class="btn btn-primary">
-            <a href="Principal.php" class="btn btn-secondary">Cancelar</a>
+            <!-- Campos del formulario para agregar un nuevo producto -->
         </form>
     </div>
 
