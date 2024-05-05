@@ -1,5 +1,6 @@
 # Desplegament-web
 
+![Captura de pantalla de Principal.php](https://github.com/GiraldoDuqueNatalia/Desplegament-web/blob/4d7f31488efdf638d06800e4efa118e3fd0853b9/Principal.png)
 
 ## Acerca del proyecto
 
