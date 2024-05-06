@@ -1,33 +1,37 @@
 <?php
+/**
+ * @package    Desplegament-web
+ * @subpackage SourceFiles
+ * @category   GestiondeProductos
+ * @author     Natalia Giraldo Duque
+ * @license    http://opensource.org/licenses/gpl-license.php GNU Public License
+ */
+
 require_once('Connexio.php');
 
 /**
- * Script para  agregar un nuevo producto a la base de datos.
+ * Verifica si se recibieron datos del formulario.
+ *
+ * @var string $_SERVER["REQUEST_METHOD"] Método de la solicitud HTTP.
  */
-
-// Verifica si se recibieron datos del formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     /**
-     * @var string $nom El nombre del producto
+     * Recibe los datos del formulario.
+     *
+     * @var string $nom Nombre del producto.
+     * @var string $descripcio Descripción del producto.
+     * @var float $preu Precio del producto.
+     * @var int $categoria ID de la categoría del producto.
      */
     $nom = $_POST['nom'];
-    /**
-     * @var string $descripcio La descripción del producto
-     */
     $descripcio = $_POST['descripcio'];
-    /**
-     * @var float $preu El precio del producto
-     */
     $preu = $_POST['preu'];
-    /**
-     * @var int $categoria El ID de la categoría del producto
-     */
     $categoria = $_POST['categoria'];
 
     // Conecta a la base de datos
     $conn = new Connexio();
     /**
-     * @var mysqli $conexion La conexión a la base de datos
+     * @var mysqli $conexion La conexión a la base de datos.
      */
     $conexion = $conn->obtenirConnexio();
 
@@ -36,6 +40,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Prepara y ejecuta la consulta utilizando declaraciones preparadas para evitar la inyección de SQL
     if ($stmt = $conexion->prepare($sql)) {
+        /**
+         * @var mysqli_stmt $stmt La declaración preparada.
+         */
         $stmt->bind_param("ssdi", $nom, $descripcio, $preu, $categoria);
 
         // Ejecuta la consulta
