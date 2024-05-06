@@ -1,8 +1,19 @@
 <?php
+/**
+ * @package    Desplegament-web
+ * @subpackage SourceFiles
+ * @category    GestiondeProductos
+ * @author     Natalia Giraldo Duque
+ * @license    http://opensource.org/licenses/gpl-license.php GNU Public License
+ */
+
 require_once('Connexio.php');
 
 /**
  * Script para eliminar un producto de la base de datos.
+ *
+ * Este script recibe un ID de producto a través de una solicitud GET y elimina el producto correspondiente de la base de datos.
+ * Utiliza declaraciones preparadas para evitar la inyección de SQL.
  */
 
 // Verifica si se recibió un ID válido del producto a eliminar
